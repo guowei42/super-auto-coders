@@ -4,6 +4,11 @@ services:
     build:
       context: client
       dockerfile: ./Dockerfile
+    develop:
+      watch:
+        - action: sync
+          path: ./client
+          target: /app
     environment:
       NODE_ENV: DEV
     ports:
